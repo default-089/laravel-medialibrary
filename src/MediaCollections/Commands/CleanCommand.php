@@ -102,7 +102,7 @@ class CleanCommand extends Command
         });
     }
 
-    protected $media): void
+    protected function deleteConversionFilesForDeprecatedConversions(Media $media): void
     {
         $conversionFilePaths = ConversionCollection::createForMedia($media)->getConversionsFiles($media->collection_name);
 
@@ -122,7 +122,7 @@ class CleanCommand extends Command
             });
     }
 
-    protected $media): void
+    protected function deleteResponsiveImagesForDeprecatedConversions(Media $media): void
     {
         $conversionNames = ConversionCollection::createForMedia($media)
             ->map(fn (Conversion $conversion) => $conversion->getName())
@@ -168,7 +168,7 @@ class CleanCommand extends Command
             });
     }
 
-    protected $conversionPath): void
+    protected function markConversionAsRemoved(Media $media, string $conversionPath): void
     {
         $conversionFile = pathinfo($conversionPath, PATHINFO_FILENAME);
 
