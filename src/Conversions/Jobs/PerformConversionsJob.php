@@ -14,11 +14,11 @@ class PerformConversionsJob implements ShouldQueue
 {
     use InteractsWithQueue, SerializesModels, Queueable;
 
-    protected ConversionCollection $conversions;
+    protected $conversions;
 
-    protected Media $media;
+    protected $media;
 
-    protected bool $onlyMissing;
+    protected $onlyMissing;
 
     public function __construct(ConversionCollection $conversions, Media $media, bool $onlyMissing = false)
     {

@@ -9,13 +9,13 @@ use Spatie\MediaLibrary\MediaCollections\Models\Media;
 
 class HtmlableMedia implements Htmlable
 {
-    protected Media $media;
+    protected $media;
 
-    protected string $conversionName = '';
+    protected $conversionName = '';
 
-    protected array $extraAttributes = [];
+    protected $extraAttributes = [];
 
-    protected string $loadingAttributeValue = '';
+    protected $loadingAttributeValue = '';
 
     public function __construct(Media $media)
     {

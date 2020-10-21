@@ -16,9 +16,9 @@ use Spatie\MediaLibrary\Support\RemoteFile;
 
 class Filesystem
 {
-    protected Factory $filesystem;
+    protected $filesystem;
 
-    protected array $customRemoteHeaders = [];
+    protected $customRemoteHeaders = [];
 
     public function __construct(Factory $filesystem)
     {

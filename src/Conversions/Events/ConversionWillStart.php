@@ -10,11 +10,11 @@ class ConversionWillStart
 {
     use SerializesModels;
 
-    public Media $media;
+    public $media;
 
-    public Conversion $conversion;
+    public $conversion;
 
-    public string $copiedOriginalFile;
+    public $copiedOriginalFile;
 
     public function __construct(Media $media, Conversion $conversion, string $copiedOriginalFile)
     {

@@ -4,11 +4,11 @@ namespace Spatie\MediaLibrary\MediaCollections;
 
 class File
 {
-    public string $name;
+    public $name;
 
-    public int $size;
+    public $size;
 
-    public string $mimeType;
+    public $mimeType;
 
     public static function createFromMedia($media)
     {

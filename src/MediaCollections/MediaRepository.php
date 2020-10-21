@@ -11,7 +11,7 @@ use Spatie\MediaLibrary\MediaCollections\Models\Media;
 
 class MediaRepository
 {
-    protected Media $model;
+    protected $model;
 
     public function __construct(Media $model)
     {

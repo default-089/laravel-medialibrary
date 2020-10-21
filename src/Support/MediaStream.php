@@ -11,11 +11,11 @@ use ZipStream\ZipStream;
 
 class MediaStream implements Responsable
 {
-    protected string $zipName;
+    protected $zipName;
 
-    protected Collection $mediaItems;
+    protected $mediaItems;
 
-    protected ArchiveOptions $zipOptions;
+    protected $zipOptions;
 
     public static function create(string $zipName)
     {

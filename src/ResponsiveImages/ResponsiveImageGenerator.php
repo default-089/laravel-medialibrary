@@ -17,11 +17,11 @@ use Spatie\TemporaryDirectory\TemporaryDirectory as BaseTemporaryDirectory;
 
 class ResponsiveImageGenerator
 {
-    protected Filesystem $filesystem;
+    protected $filesystem;
 
-    protected WidthCalculator $widthCalculator;
+    protected $widthCalculator;
 
-    protected TinyPlaceholderGenerator $tinyPlaceholderGenerator;
+    protected $tinyPlaceholderGenerator;
 
     protected const DEFAULT_CONVERSION_QUALITY = 90;
 

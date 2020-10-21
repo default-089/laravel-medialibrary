@@ -25,36 +25,36 @@ class FileAdder
 {
     use Macroable;
 
-    protected ?Model $subject;
+    protected $subject;
 
-    protected ?Filesystem $filesystem;
+    protected $filesystem;
 
-    protected bool $preserveOriginal = false;
+    protected $preserveOriginal = false;
 
     /** @var \Symfony\Component\HttpFoundation\File\UploadedFile|string */
     protected $file;
 
-    protected array $properties = [];
+    protected $properties = [];
 
-    protected array $customProperties = [];
+    protected $customProperties = [];
 
-    protected array $manipulations = [];
+    protected $manipulations = [];
 
-    protected string $pathToFile = '';
+    protected $pathToFile = '';
 
-    protected string $fileName = '';
+    protected $fileName = '';
 
-    protected string $mediaName = '';
+    protected $mediaName = '';
 
-    protected string $diskName = '';
+    protected $diskName = '';
 
-    protected string $conversionsDiskName = '';
+    protected $conversionsDiskName = '';
 
-    protected ?Closure $fileNameSanitizer;
+    protected $fileNameSanitizer;
 
-    protected bool $generateResponsiveImages = false;
+    protected $generateResponsiveImages = false;
 
-    protected array $customHeaders = [];
+    protected $customHeaders = [];
 
     public function __construct(Filesystem $fileSystem)
     {

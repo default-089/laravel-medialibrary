@@ -27,17 +27,17 @@ class CleanCommand extends Command
 
     protected $description = 'Clean deprecated conversions and files without related model.';
 
-    protected MediaRepository $mediaRepository;
+    protected $mediaRepository;
 
-    protected FileManipulator $fileManipulator;
+    protected $fileManipulator;
 
-    protected Factory $fileSystem;
+    protected $fileSystem;
 
-    protected DefaultPathGenerator $basePathGenerator;
+    protected $basePathGenerator;
 
-    protected bool $isDryRun = false;
+    protected $isDryRun = false;
 
-    protected int $rateLimit = 0;
+    protected $rateLimit = 0;
 
     public function handle(
         MediaRepository $mediaRepository,
@@ -102,7 +102,7 @@ class CleanCommand extends Command
         });
     }
 
-    protected function deleteConversionFilesForDeprecatedConversions(Media $media): void
+    protected $media): void
     {
         $conversionFilePaths = ConversionCollection::createForMedia($media)->getConversionsFiles($media->collection_name);
 
@@ -122,7 +122,7 @@ class CleanCommand extends Command
             });
     }
 
-    protected function deleteResponsiveImagesForDeprecatedConversions(Media $media): void
+    protected $media): void
     {
         $conversionNames = ConversionCollection::createForMedia($media)
             ->map(fn (Conversion $conversion) => $conversion->getName())
@@ -168,7 +168,7 @@ class CleanCommand extends Command
             });
     }
 
-    protected function markConversionAsRemoved(Media $media, string $conversionPath): void
+    protected $conversionPath): void
     {
         $conversionFile = pathinfo($conversionPath, PATHINFO_FILENAME);
 

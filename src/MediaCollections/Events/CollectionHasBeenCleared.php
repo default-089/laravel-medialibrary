@@ -9,9 +9,9 @@ class CollectionHasBeenCleared
 {
     use SerializesModels;
 
-    public HasMedia $model;
+    public $model;
 
-    public string $collectionName;
+    public $collectionName;
 
     public function __construct(HasMedia $model, string $collectionName)
     {

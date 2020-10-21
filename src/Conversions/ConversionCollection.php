@@ -11,7 +11,7 @@ use Spatie\MediaLibrary\MediaCollections\Models\Media;
 
 class ConversionCollection extends Collection
 {
-    protected Media $media;
+    protected $media;
 
     public static function createForMedia(Media $media): self
     {

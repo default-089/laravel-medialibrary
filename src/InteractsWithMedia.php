@@ -27,14 +27,14 @@ use Spatie\MediaLibrary\MediaCollections\Models\Media;
 trait InteractsWithMedia
 {
     /** @var \Spatie\MediaLibrary\Conversions\Conversion[] */
-    public array $mediaConversions = [];
+    public $mediaConversions = [];
 
     /** @var \Spatie\MediaLibrary\MediaCollections\MediaCollection[] */
-    public array $mediaCollections = [];
+    public $mediaCollections = [];
 
-    protected bool $deletePreservingMedia = false;
+    protected $deletePreservingMedia = false;
 
-    protected array $unAttachedMediaLibraryItems = [];
+    protected $unAttachedMediaLibraryItems = [];
 
     public static function bootInteractsWithMedia()
     {

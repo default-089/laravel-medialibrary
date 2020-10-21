@@ -10,9 +10,9 @@ class ConversionHasBeenCompleted
 {
     use SerializesModels;
 
-    public Media $media;
+    public $media;
 
-    public Conversion $conversion;
+    public $conversion;
 
     public function __construct(Media $media, Conversion $conversion)
     {

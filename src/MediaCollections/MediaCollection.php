@@ -9,30 +9,30 @@ class MediaCollection
 {
     use Macroable;
 
-    public string $name = '';
+    public $name = '';
 
-    public string $diskName = '';
+    public $diskName = '';
 
-    public string $conversionsDiskName = '';
+    public $conversionsDiskName = '';
 
     /** @var callable */
     public $mediaConversionRegistrations;
 
-    public bool $generateResponsiveImages = false;
+    public $generateResponsiveImages = false;
 
     /** @var callable */
     public $acceptsFile;
 
-    public array $acceptsMimeTypes = [];
+    public $acceptsMimeTypes = [];
 
     /** @var bool|int */
     public $collectionSizeLimit = false;
 
-    public bool $singleFile = false;
+    public $singleFile = false;
 
-    public string $fallbackUrl = '';
+    public $fallbackUrl = '';
 
-    public string $fallbackPath = '';
+    public $fallbackPath = '';
 
     public function __construct(string $name)
     {

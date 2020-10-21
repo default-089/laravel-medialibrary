@@ -17,7 +17,7 @@ class ClearCommand extends Command
 
     protected $description = 'Delete all items in a media collection.';
 
-    protected MediaRepository $mediaRepository;
+    protected $mediaRepository;
 
     public function handle(MediaRepository $mediaRepository)
     {

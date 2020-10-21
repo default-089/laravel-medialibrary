@@ -9,7 +9,7 @@ class ResponsiveImagesGenerated
 {
     use SerializesModels;
 
-    public Media $media;
+    public $media;
 
     public function __construct(Media $media)
     {
