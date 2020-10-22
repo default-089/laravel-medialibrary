@@ -386,7 +386,7 @@ trait InteractsWithMedia
         }
     }
 
-    public function clearMediaCollection(string $collectionName = 'default'): self
+    public function clearMediaCollection(string $collectionName = 'default')
     {
         $this
             ->getMedia($collectionName)
@@ -411,7 +411,7 @@ trait InteractsWithMedia
      *
      * @return $this
      */
-    public function clearMediaCollectionExcept(string $collectionName = 'default', $excludedMedia = []): self
+    public function clearMediaCollectionExcept(string $collectionName = 'default', $excludedMedia = [])
     {
         if ($excludedMedia instanceof Media) {
             $excludedMedia = collect()->push($excludedMedia);
