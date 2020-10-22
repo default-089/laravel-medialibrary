@@ -576,7 +576,7 @@ trait InteractsWithMedia
                 ->values()
                 ->toArray();
 
-            $this->mediaConversions = [...$actualMediaConversions, ...$preparedMediaConversions];
+            $this->mediaConversions = array_merge($actualMediaConversions, $preparedMediaConversions);
         });
 
         $this->registerMediaConversions($media);
