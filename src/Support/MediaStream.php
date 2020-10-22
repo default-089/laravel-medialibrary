@@ -56,7 +56,7 @@ class MediaStream implements Responsable
 
                 return $item;
             })
-            ->each(fn (Media $media) => $this->mediaItems->push($media));
+            ->each(function (Media $media) { return $this->mediaItems->push($media); });
 
         return $this;
     }
@@ -73,7 +73,7 @@ class MediaStream implements Responsable
             'Content-Type' => 'application/octet-stream',
         ];
 
-        return new StreamedResponse(fn () => $this->getZipStream(), 200, $headers);
+        return new StreamedResponse(function () { return $this->getZipStream(); }, 200, $headers);
     }
 
     public function getZipStream(): ZipStream
@@ -97,10 +97,12 @@ class MediaStream implements Responsable
 
     protected function getZipStreamContents(): Collection
     {
-        return $this->mediaItems->map(fn (Media $media, $mediaItemIndex) => [
-            'fileNameInZip' => $this->getZipFileNamePrefix($this->mediaItems, $mediaItemIndex).$this->getFileNameWithSuffix($this->mediaItems, $mediaItemIndex),
-            'media' => $media,
-        ]);
+        return $this->mediaItems->map(function (Media $media, $mediaItemIndex) {
+            return [
+                'fileNameInZip' => $this->getZipFileNamePrefix($this->mediaItems, $mediaItemIndex).$this->getFileNameWithSuffix($this->mediaItems, $mediaItemIndex),
+                'media' => $media,
+            ]; 
+        });
     }
 
     protected function getFileNameWithSuffix(Collection $mediaItems, int $currentIndex): string

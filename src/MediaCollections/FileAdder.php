@@ -60,7 +60,7 @@ class FileAdder
     {
         $this->filesystem = $fileSystem;
 
-        $this->fileNameSanitizer = fn ($fileName) => $this->defaultSanitizer($fileName);
+        $this->fileNameSanitizer = function ($fileName) { return $this->defaultSanitizer($fileName); };
     }
 
     public function setSubject(Model $subject): self
@@ -432,7 +432,9 @@ class FileAdder
         $this->subject->registerMediaCollections();
 
         return collect($this->subject->mediaCollections)
-            ->first(fn (MediaCollection $collection) => $collection->name === $collectionName);
+            ->first(function (MediaCollection $collection) use ($collectionName) {
+                return $collection->name === $collectionName;
+            });
     }
 
     protected function guardAgainstDisallowedFileAdditions(Media $media)

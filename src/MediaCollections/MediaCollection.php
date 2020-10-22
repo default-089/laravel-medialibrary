@@ -41,7 +41,7 @@ class MediaCollection
         $this->mediaConversionRegistrations = function () {
         };
 
-        $this->acceptsFile = fn () => true;
+        $this->acceptsFile = function () { return true; };
     }
 
     public static function create($name)
